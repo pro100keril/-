@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+p {
+text-align: center;
+font-size: 50px;
+margin-top: 100px;
+}
+div.container4 {
+height: 10em;
+position: relative }
+div.container4 p {
+margin: 50;
+position: absolute;
+top: 50%;
+left: 50%;
+margin-right: -50%;
+transform: translate(-50%, -50%) }
+</style>
+</head>
+<body>
+<div id="text" class="container4">
+<p>ДО ОТЧИСЛЕНИЯ:
+</div>
+<p id="demo"></p>
+
+<script>
+
+var countDownDate = new Date("Apr 22, 2022 12:00:00").getTime();
+var x = setInterval(function() {
+
+var now = new Date().getTime();
+var distance = countDownDate - now;
+var hours = Math.floor(distance / (1000 * 60 * 60));
+var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+document.getElementById("demo").innerHTML = hours + " часов "
++ minutes + " минут " + seconds + " секунд. ";
+if (distance < 0) {
+clearInterval(x);
+document.getElementById("demo").innerHTML = "ОТЧИСЛЕН.";
+}
+}, 1000);
+function isEmail() {
+demo.innerHTML = "НЕ ОТЧИСЛЕН.";
+clearInterval(x);
+document.getElementById('text').hidden = true;
+}
+
+</script>
+<form action="">
+<p><input type="button" value="сдать долги" onclick="isEmail()"></p>
+</form>
+
+</body>
+
+</html>
